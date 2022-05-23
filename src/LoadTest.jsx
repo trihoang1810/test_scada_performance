@@ -9,7 +9,7 @@ function LoadTest() {
   const [assemblyData, setAssemblyData] = React.useState([]);
   React.useEffect(() => {
     const connect = new HubConnectionBuilder()
-      .withUrl("http://10.84.70.80:8085/websockethub", {
+      .withUrl(process.env.REACT_APP_BASE_HUB_URL, {
         skipNegotiation: true,
         transport: HttpTransportType.WebSockets,
       })

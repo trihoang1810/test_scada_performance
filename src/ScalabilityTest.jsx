@@ -6,7 +6,7 @@ function ScalabilityTest() {
   const [connection, setConnection] = React.useState(null);
   React.useEffect(() => {
     const connection = new HubConnectionBuilder()
-      .withUrl("http://10.84.70.80:8085/websockethub", {
+      .withUrl(process.env.REACT_APP_BASE_HUB_URL, {
         skipNegotiation: true,
         transport: HttpTransportType.WebSockets,
       })
